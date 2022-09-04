@@ -5,6 +5,7 @@ use App\Http\Controllers\Demo\Democontroller;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\PortfolioController;
 use Illuminate\Support\Facades\Route;
@@ -114,4 +115,11 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/blog', 'HomeBlog')->name('home.blog');
 
 });
+// Footer All Route
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
+    Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+
+});
+
 
