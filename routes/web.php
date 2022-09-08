@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.index');
+//});
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -32,11 +32,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 Route::controller(DemoController::class)->group(function () {
-//    Route::get('/', 'HomeMain')->name('home');
+   Route::get('/', 'HomeMain')->name('home');
     Route::get('/about', 'Index')->name('about.page')->middleware('check');
     Route::get('/contact', 'ContactMethod')->name('contact.page');
 });
 // admin all route
+Route::middleware(['auth'])->group(function () {
 Route::controller(AdminController::class)->group(function () {
 //    Route::get('/', 'HomeMain')->name('home');
     Route::get('/admin/logout', 'destroy')->name('admin.logout');
@@ -46,6 +47,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/change/password', 'ChangePassword')->name('change.password');
     Route::post('/update/password', 'UpdatePassword')->name('update.password');
  //   Route::get('/contact', 'ContactMethod')->name('contact.page');
+});
 });
 //home slide all route
 Route::controller(HomeSliderController::class)->group(function () {
@@ -83,7 +85,7 @@ Route::controller(PortfolioController::class)->group(function () {
 //
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
     //
-//    Route::get('/portfolio', 'HomePortfolio')->name('home.portfolio');//not used
+    Route::get('/portfolio', 'HomePortfolio')->name('home.portfolio');
 });
 
 // Blog Category All Routes

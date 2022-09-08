@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class Democontroller extends Controller
 {
-//    public function HomeMain(){
-//        return view('frontend.index');
-//    }// end method
+    public function HomeMain(){
+        return view('frontend.index');
+    }// end method
 
 
     public function Index(){

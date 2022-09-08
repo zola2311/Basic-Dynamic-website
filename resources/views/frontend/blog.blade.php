@@ -68,8 +68,21 @@ Blog | EasyLearning Website
 
 
         <div class="pagination-wrap">
-{{--            {{ $allblogs->links('vendor.pagination.custom') }}--}}
-        </div>
+{{--            {{ $allblogs->links() }}--}}
+            {{ $allblogs->links('vendor.pagination.custom') }}
+         </div>
+{{--                            <div class="pagination-wrap">--}}
+{{--                                <nav aria-label="Page navigation example">--}}
+{{--                                    <ul class="pagination">--}}
+{{--                                        <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-left"></i></a></li>--}}
+{{--                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>--}}
+{{--                                        <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                                        <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+
+{{--                                        <li class="page-item"><a class="page-link" href="#"><i class="far fa-long-arrow-right"></i></a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </nav>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="col-lg-4">
                             <aside class="blog__sidebar">

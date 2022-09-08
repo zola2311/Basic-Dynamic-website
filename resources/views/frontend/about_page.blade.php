@@ -1,4 +1,7 @@
 @extends('frontend.main_master')
+@section('title')
+    About
+@endsection
 @section('main')
     <main>
 

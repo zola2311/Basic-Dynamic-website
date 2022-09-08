@@ -21,9 +21,9 @@
                 <label for="example-text-input" class="col-sm-2 col-form-label">Blog Category Name</label>
                 <div class="form-group col-sm-10">
                     <input name="blog_category" class="form-control" type="text" id="example-text-input">
-                    @error('blog_category')
-                    <span class="text-danger">{{$message}}</span>
-                    @enderror
+{{--                    @error('blog_category')--}}
+{{--                    <span class="text-danger">{{$message}}</span>--}}
+{{--                    @enderror--}}
                 </div>
             </div>
             <!-- end row -->
@@ -48,12 +48,19 @@
 <script type="text/javascript">
     $(document).ready(function (){
         $('#myForm').validate({
+            // #my form is id given for the input
             rules: {
                 blog_category: {
+                    // blog_category is name of the input
                     required : true,
+                    //making  blog_category mandatory
+                    // also this is the place to modify for different in puts to add
+                    //blog_title: {
+                    // blog_title is name of the input
+                    // required : true,
                 },
             },
-            messages :{
+            messages :{//messages for the in put
                 blog_category: {
                     required : 'Please Enter Blog Category',
                 },
